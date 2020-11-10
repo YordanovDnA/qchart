@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import Chart from './chart';
+import QChart from './quickChart';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         >
           Learn React
         </a>
+        <QChart title="New chart"  type="line" labels={["Mon", "Thu", "Wed", "Thur", "Fri", "Sat", "Sun"]} data={[5,2,3,4,5,10,1]} animation="zoomIn"  />
         <Chart />
         <Chart type="line" title="2020 - COVID-19 cases" data={[
           12,11,10,9,8,7,6,5,4,3,2,1
