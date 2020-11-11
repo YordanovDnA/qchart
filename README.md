@@ -49,7 +49,7 @@ function App() {
 export default App;
 ```
 
-![GitHub Logo](https://lh4.googleusercontent.com/49JofY-PL_eP72DDNf17QSE_8oaMtPlgslSW0CcNxJYb9mjGX1B-4EZ23LwHbSEmNUmcDDj16TfKzgTH8tNP=w1462-h967-rw)
+![ScreenShot](q-chart-with-default.jpg)
 
 ### Change the chart info via props:
 
@@ -77,7 +77,7 @@ function App() {
 export default App;
 ```
 
-![GitHub Logo](https://lh4.googleusercontent.com/XubDBTqLidFphLExVHja0MNwppBAlAhwI6g5b5sXv75-6viIB246A1ehOlT5XBWW7CKwbU62k9ycA7w2GziY=w1462-h967-rw)
+![ScreenShot](q-chart-with-props.jpg)
 
 ## Prop types:
 
