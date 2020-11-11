@@ -1,70 +1,123 @@
-# Getting Started with Create React App
+# QChart
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a reusable React component taking which renders a chart based on the data passed via props
 
-## Available Scripts
+## Installation
 
-In the project directory, you can run:
+Clone the repository and run:
 
-### `npm start`
+```npm
+npm install
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Usage
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+```npm
+cd qchart
+```
 
-### `npm test`
+```npm
+npm start
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The application will be launched at [http://localhost:3000]("http://localhost:3000")
 
-### `npm run build`
+## Examples
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Default chart:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+By default the chart data is:
+|name | data | Description
+| ------------- |:-------------:| :-------------:|
+| type | line | The shape/type of the chart|
+| title | last year + customers report | The title of the chart/data |
+| labels | "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Nov", "Dec" | The data laybles for each column |
+| data| 1540, 1820, 2200, 1700, 1880, 1900, 2500, 2705, 2000, 1650, 2560, 2910| The data for each column in the charm|
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```javascript
+import "./App.css";
+import QChart from "./quickChart";
 
-### `npm run eject`
+function App() {
+  return (
+    <div className="App">
+      <QChart />
+    </div>
+  );
+}
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+export default App;
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+![alt text](https://lh4.googleusercontent.com/49JofY-PL_eP72DDNf17QSE_8oaMtPlgslSW0CcNxJYb9mjGX1B-4EZ23LwHbSEmNUmcDDj16TfKzgTH8tNP=w1462-h967-rw "Logo Title Text 1")
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Change the chart info via props:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+We can change the title, labels, data and even the animation and animation duration via props.
 
-## Learn More
+```javascript
+import "./App.css";
+import QChart from "./quickChart";
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+function App() {
+  return (
+    <div className="App">
+      <QChart
+        type="bar"
+        title="Hours sleep"
+        labels={["Mo", "Tu", "We", "Th", "Fr", "Sa", "Su"]}
+        data={[8, 7.6, 8, 6, 6, 5, 9, 10]}
+        animation="zoomIn"
+        animationDuration="1.4s"
+      />
+    </div>
+  );
+}
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+export default App;
+```
 
-### Code Splitting
+![alt text](https://lh4.googleusercontent.com/XubDBTqLidFphLExVHja0MNwppBAlAhwI6g5b5sXv75-6viIB246A1ehOlT5XBWW7CKwbU62k9ycA7w2GziY=w1462-h967-rw "Logo Title Text 1")
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Prop types:
 
-### Analyzing the Bundle Size
+| Name              |                        Type                         |            Examples / Options |
+| ----------------- | :-------------------------------------------------: | ----------------------------: |
+| type              |                   specific string                   |            "line"(By default) |
+|                   |                                                     |                         "bar" |
+|                   |                                                     |                         "pie" |
+|                   |                                                     |                       "radar" |
+|                   |                                                     |                    "doughnut" |
+| title             |                     any string                      |         "Monthly wages - 2019 |
+| labels            |                array of any strings                 | ["Jan", "Feb", . . . , "Dec"] |
+| data              |                array of any numbers                 |  [2500, 2350, . . . , "3500"] |
+| animation         |                   specific string                   |            "fadeIn" (default) |
+|                   |                                                     |                    "fadeInUp" |
+|                   |                                                     |                 "fadeInRight" |
+|                   |                                                     |                  "fadeInDown" |
+|                   |                                                     |                  "fadeInLeft" |
+|                   |                                                     |                    "bounceIn" |
+|                   |                                                     |                  "bounceInUp" |
+|                   |                                                     |               "bounceInRight" |
+|                   |                                                     |                "bounceInDown" |
+|                   |                                                     |                "bounceInLeft" |
+|                   |                                                     |                     "flipInX" |
+|                   |                                                     |                     "flipInY" |
+|                   |                                                     |                      "zoomIn" |
+|                   |                                                     |                      "blurIn" |
+|                   |                                                     |                    "blurInUp" |
+|                   |                                                     |                 "blurInRight" |
+|                   |                                                     |                  "blurInDown" |
+|                   |                                                     |                  "blurInLeft" |
+|                   |                                                     |                      "fillIn" |
+| animationDuration | specific string (any number followed by "s" or "ms" |              "1s" or "1000ms" |
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Contributing
 
-### Making a Progressive Web App
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Please make sure to update tests as appropriate.
 
-### Advanced Configuration
+## License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+[MIT](https://choosealicense.com/licenses/mit/)
