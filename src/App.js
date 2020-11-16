@@ -1,5 +1,6 @@
 import './App.css';
 import QChart from './quickChart';
+import CustomChartJs from './CustomChartJs';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         data={[8, 7.6, 8, 6, 6, 5, 9, 10]} 
         animation="zoomIn" 
         animationDuration="1.4s" />
+        <CustomChartJs />
     </div>
   );
 }
