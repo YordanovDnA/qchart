@@ -49,7 +49,7 @@ function App() {
 export default App;
 ```
 
-![ScreenShot](q-chart-with-default.jpg)
+![alt text](https://raw.githubusercontent.com/YordanovDnA/qchart/main/src/images/q-chart-default.jpg)
 
 ### Change the chart info via props:
 
@@ -77,7 +77,7 @@ function App() {
 export default App;
 ```
 
-![ScreenShot](q-chart-with-props.jpg)
+![alt text](https://raw.githubusercontent.com/YordanovDnA/qchart/main/src/images/q-chart-with-props.jpg)
 
 ## Prop types:
 
